@@ -25,4 +25,4 @@ jobs:
           external_repository: pengpan/blog-site
           publish_branch: main
           publish_dir: ./public
-          keep_files: false
+          cname: blog.dcode.top
