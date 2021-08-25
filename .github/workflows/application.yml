@@ -11,15 +11,18 @@ jobs:
         uses: actions/checkout@v2
         with:
           submodules: true
+      
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2.4.13
+        uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: '0.80.0'
+          hugo-version: 'latest'
           extended: true
+      
       - name: Build
-        run: hugo -D
+        run: hugo --minify
+      
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3.8.0
+        uses: peaceiris/actions-gh-pages@v3
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           external_repository: pengpan/blog-site
